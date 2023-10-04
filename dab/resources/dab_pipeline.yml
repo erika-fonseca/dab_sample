@@ -1,0 +1,12 @@
+# The main pipeline for dab
+resources:
+  pipelines:
+    dab_pipeline:
+      name: dab_pipeline
+      target: dab_${bundle.environment}
+      libraries:
+        - notebook:
+            path: ../src/dlt_pipeline.ipynb
+
+      configuration:
+        bundle.sourcePath: /Workspace/${workspace.file_path}/src
